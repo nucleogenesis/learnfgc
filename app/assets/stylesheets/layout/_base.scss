@@ -1,0 +1,17 @@
+@import "header_main";
+
+/* Very Base Styles */
+.container {
+	@include outer-container;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+/* List Styles */
+.inline-list-item {
+	float: left;
+	display: inline-block;
+}

@@ -1,0 +1,98 @@
+header#header-main {
+	position: relative;
+	margin-top: 0.5em;
+}
+
+div#header-logo {
+	width: 225px;
+	height: auto;
+	float: left;
+	position: relative;
+	margin-right: 15px;
+
+	img {
+		width: 225px;
+		height: auto;
+	}
+}
+
+div#top-menu-wrapper {
+	width: 960px;
+	float: left;
+	position: relative;
+	padding: 0.5em 0;
+	margin-bottom: 0.25em;
+}
+
+div.top-menu {
+	@include span-columns(5);
+	margin-right: 1em;
+	height: 42px;
+	background: lightblue;
+
+
+	nav {
+		display: block;
+		position: relative;
+		width: 100%;
+
+		ul {
+			width: 100%;
+			@include align-items(stretch);
+			@include display(flex);
+			@include flex-direction(row);
+			@include justify-content(flex-start);
+		}
+		li {
+			height: 42px;
+			@include flex(1);
+			text-align: center;
+		}
+		a {
+			height: 42px;
+			display:block;
+			color: #fff;
+			padding: 0 0.6em;
+			line-height: 2.5em;
+		}
+		a:hover {
+			background: lightgray;
+		}
+	}
+}
+div.top-search {
+	@include span-columns(4);
+	margin-right: 1em;
+
+	input {
+		margin-bottom:0;
+	}
+}
+div.top-account {
+	@include span-columns(3);
+	position: relative;
+	float: left;
+
+	button {
+	}
+}
+
+div#games-menu-wrapper {
+	width: 960px;
+	max-height: 78px;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	padding: 0.5em;
+	background: rgba(0,0,0,0.1);
+
+	ul {
+		display: relative;
+		width: 100%;
+	}
+
+	li {
+		padding: 0.25em 1em;
+		text-align: center;
+	}
+}
