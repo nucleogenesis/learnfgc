@@ -1,0 +1,31 @@
+div.character-wrapper {
+	width: 100%;
+	padding: 0.5em;
+	background: lightblue;
+
+	ul {
+		width: 100%;
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include justify-content(space-between);
+		@include flex-wrap(wrap);
+	}
+
+	li {
+		@include display(flex);
+		width: 11%;
+		height: auto;
+		margin-right: 0.4em;
+	}
+
+	a {
+		@include fill-parent;
+		position: relative;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}

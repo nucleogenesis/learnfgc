@@ -1,6 +1,9 @@
 header#header-main {
 	position: relative;
 	margin-top: 0.5em;
+	margin-bottom: 1em;
+	@include clearfix;
+	@include omega;
 }
 
 div#header-logo {
