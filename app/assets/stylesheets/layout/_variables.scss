@@ -7,5 +7,6 @@ $blue: #ADD8E3;
 
 $blueshade: shade($blue, 20);
 $darkblueshade: darken(shade($blue, 20), 20);
+$lightorange: lighten($orange, 20);
 $orangeshade: shade($orange, 20);
 $darkorangeshade: darken(shade($orange, 20), 20);
