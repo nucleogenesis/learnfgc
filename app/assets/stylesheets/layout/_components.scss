@@ -86,16 +86,20 @@ button.filter-button {
 			position: relative;
 
 			.article-title {
-				@include article-list-header;
 				display: inline-block;
 				width: 100%;
 				float: left;
+
+				h2 {
+					margin-bottom: 0;
+				}
 			}
 
 			.tags {
 				float: left;
 				width: 100%;
 				padding: 0.25em 0;
+				margin: 0.25em 0;
 			}
 			.article-meta {
 				float: left;
@@ -127,12 +131,11 @@ button.filter-button {
 	a {
 		border-radius: 0.5em;
 		display: block;
-		color: orange;
+		color: $orangeshade;
 		padding: 0.25em 0.5em;
 		
 		&:hover {
-			color: #fff;
-			background: #888;
+			color: $darkblueshade;
 		}
 	}
 }

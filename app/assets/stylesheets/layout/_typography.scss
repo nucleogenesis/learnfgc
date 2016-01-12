@@ -4,8 +4,21 @@
 $font-lato: "Lato", Helvetica, sans-serif;
 $font-dosis: "Dosis", $font-lato;
 
-@mixin article-list-header {
+h1, h2, h3, h4, h5, h6 {
 	font-family: $font-lato;
+}
+
+h1 {
+}
+h2 {
 	font-size: 1.2em;
 	font-weight: 500;
+}
+
+a {
+	color: $darkblueshade;
+
+	&:hover {
+		color: $blueshade;
+	}
 }
