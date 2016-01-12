@@ -38,6 +38,7 @@ div.character-image-menu {
 	left: 0;
 	width: 100%;
 	background: rgba(0,0,0,0.6);
+
 	@include align-items(stretch);
 	@include display(flex);
 	@include flex-direction(column);
