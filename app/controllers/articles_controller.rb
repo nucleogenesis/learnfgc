@@ -8,6 +8,9 @@ class ArticlesController < ApplicationController
   def character_index
   end
 
+  def character_frame_data
+  end
+
   def show
   end
 end
