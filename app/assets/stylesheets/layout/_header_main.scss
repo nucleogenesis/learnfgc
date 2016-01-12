@@ -55,10 +55,10 @@ div.top-menu {
 			color: #fff;
 			padding: 0 0.6em;
 			line-height: 2.5em;
-			background: $blue;
+			background: $blueshade;
 		}
 		a:hover {
-			background: $blueshade;
+			background: $darkblueshade;
 		}
 	}
 }
@@ -67,7 +67,7 @@ div.top-search {
 	position: relative;
 	margin-right: 1em;
 	padding: 0.24em;
-	background: $blue;
+	background: $blueshade;
 
 	/* Overriding Bourbon Styles */
 	input {
@@ -78,7 +78,7 @@ div.top-search {
 
 		&:focus {
 			box-shadow: none;
-			border-color: $blueshade;
+			border-color: $darkblueshade;
 		}
 
 		@include placeholder {
@@ -94,10 +94,10 @@ div.top-search {
 		padding: 0;
 		right: 3.83335px;
 		top: 3.83335px;
-		background: $blue;
+		background: $blueshade;
 
 		&:hover {
-			background: $blueshade;
+			background: $darkblueshade;
 		}
 	}
 
