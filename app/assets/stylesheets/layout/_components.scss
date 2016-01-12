@@ -1,6 +1,20 @@
 /* COMPONENTS */
 /* Styles for widely used component features of the site */
 
+.ad-filler {
+	margin-top: 0.7em;
+	width: 100%;
+	display: block;
+	float: left;
+	height: 250px;
+	text-align: center;
+	font-weight: 300;
+	font-size: 1.5em;
+	padding-top: 2em;
+	background: #cecece;
+	opacity: 0.8;
+}
+
 // - Breadcrumbs - //
 .breadcrumbs {
 	margin-bottom: 0.75em;
@@ -140,11 +154,30 @@ button.filter-button {
 		border-radius: 0.5em;
 		display: block;
 		color: $orangeshade;
+		white-space: nowrap;
 		padding: 0.25em 0.5em;
 
 		&:hover {
 			color: $darkblueshade;
 		}
+	}
+}
+
+.tag-cloud {
+	width: 100%;
+	float: left;
+	margin-top: 0.75em;
+	position: relative;
+	@include align-items(stretch);
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(space-around);
+	@include flex-wrap(wrap);
+
+	.tag {
+		@include flex(1);
+		margin-bottom: 0.3em;
+		font-size: 1em;
 	}
 }
 
@@ -232,22 +265,30 @@ button.filter-button {
 		font-size: 1.125em;
 		background: $orange;
 		color: #fff;
+
+		&:hover {
+			background: darken($orange, 20);
+		}
 	}
 }
 .beginners-guide-cta {
-	margin-top: 1em;
+	margin-top: 0.75em;
 	width: 100%;
 	float: left;
 	text-align: center;
 	padding: 0.7em 0;
 	background: $lightorange;
+	font-size: 1.2em;
 
 	h2 {
+		margin-bottom: 0.25em;
+		font-size: 1.4em;
 		font-weight: 900;
 	}
 
 	a {
 		font-weight: bold;
 		font-size: 1.2em;
+		text-decoration: underline;
 	}
 }
