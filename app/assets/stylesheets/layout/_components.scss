@@ -4,12 +4,14 @@
 // - Breadcrumbs - //
 .breadcrumbs {
 	margin-bottom: 0.75em;
+	font-size: 1.2em;
 
 	.crumb {
 		display: inline;
 	}
 	.crumb-separator {
 		display: inline;
+		margin: 0 0.25em;
 	}
 }
 
@@ -34,8 +36,9 @@ button.filter-button {
 
 		.heading {
 			float: left;
-			font-size: 1.2em;
-			font-weight: bold;
+			font-family: $font-lato;
+			font-size: 1.4em;
+			font-weight: 700;
 		}
 
 		.filter-wrapper {
@@ -52,6 +55,7 @@ button.filter-button {
 
 		.article-summary {
 			@include span-columns(2 of 7);
+			margin-top: 0.7em;
 			position: relative;
 		}
 		.summary-item {
@@ -63,11 +67,14 @@ button.filter-button {
 			}
 
 			span.summary-value {
+				font-family: $font-lato;
 				float: left;
 				display: block;
 				width: 100%;
 			}
 			span.summary-subtext {
+				font-family: $font-dosis;
+				font-weight: bold;
 				float: left;
 				display: block;
 				width: 100%;
@@ -79,10 +86,9 @@ button.filter-button {
 			position: relative;
 
 			.article-title {
+				@include article-list-header;
 				display: inline-block;
 				width: 100%;
-				font-size: 1.2em;
-				font-weight: bold;
 				float: left;
 			}
 
@@ -97,7 +103,7 @@ button.filter-button {
 
 				span {
 					display: inline;
-					padding-left: 0.25em;
+					padding-right: 1.5em;
 				}
 			}
 		}
@@ -107,12 +113,26 @@ button.filter-button {
 // - Tags - //
 
 .tag {
-	border-radius: 0.3em;
+	font-family: $font-lato;
+	font-weight: 700;
+	border-radius: 0.5em;
 	border: 1px solid #cecece;
 	color: #888;
-	padding: 0.25em 0.4em;
 	font-size: 0.75em;
 	text-align: center;
 	float: left;
-	margin-right: 0.25em;
+	margin-right: 0.45em;
+
+
+	a {
+		border-radius: 0.5em;
+		display: block;
+		color: orange;
+		padding: 0.25em 0.5em;
+		
+		&:hover {
+			color: #fff;
+			background: #888;
+		}
+	}
 }

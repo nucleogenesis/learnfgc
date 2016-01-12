@@ -1,0 +1,11 @@
+/* Typography */
+/* Defines SASS Variables and Settings for Fonts, Headings, Etc */
+
+$font-lato: "Lato", Helvetica, sans-serif;
+$font-dosis: "Dosis", $font-lato;
+
+@mixin article-list-header {
+	font-family: $font-lato;
+	font-size: 1.2em;
+	font-weight: 500;
+}
