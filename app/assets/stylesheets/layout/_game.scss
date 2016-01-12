@@ -14,9 +14,11 @@ div.character-wrapper {
 
 	li {
 		@include display(flex);
-		width: 11%;
-		height: auto;
+		position: relative;
+		width: 128px;
+		height: 128px;
 		margin-right: 0.4em;
+		margin-bottom: 0.5em;
 	}
 
 	a {
@@ -28,4 +30,45 @@ div.character-wrapper {
 		width: 100%;
 		height: auto;
 	}
+}
+
+div.character-image-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	@include align-items(stretch);
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(flex-start);
+	@include flex-wrap(no-wrap);
+
+	div.character-index-link {
+		text-align: center;
+		line-height: 2.1em;
+		position: relative;
+		background: #cecece;
+		color: #444;
+		@include flex(1);
+
+		a {
+			width: 100%;
+			height: 32px;
+			display: block;
+			color: #fff;
+			@include background(radial-gradient(rgba(40,40,40,0.8),rgba(0,0,0,0.8)));
+
+			&:hover {
+				background: black;
+				color: blue;
+			}
+		}
+	}
+}
+
+// - Article List - //
+div.article-index-wrapper {
+	@include span-columns(9);
+	margin-top: 1em;
 }

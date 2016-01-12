@@ -1,0 +1,118 @@
+/* COMPONENTS */
+/* Styles for widely used component features of the site */
+
+// - Breadcrumbs - //
+.breadcrumbs {
+	margin-bottom: 0.75em;
+
+	.crumb {
+		display: inline;
+	}
+	.crumb-separator {
+		display: inline;
+	}
+}
+
+// - Buttons - //
+// Filter Buttons
+button.filter-button {
+	padding: 0.4em 0.2em;
+	background: #fff;
+	border: 1px solid #cecece;
+	color: #888;
+}
+
+
+// - Article List - //
+.article-list {
+	// Sub-Header
+	.sub-header {
+		width: 100%;
+		border-bottom: 1px solid #cecece;
+		padding-bottom: 0.25em;
+		@include clearfix;
+
+		.heading {
+			float: left;
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+
+		.filter-wrapper {
+			float: right;
+		}
+	}
+	// Single Listed Aticle
+	.article-list-item {
+		width: 100%;
+		padding: 0.25em 0;
+		border-bottom: 1px solid #cecece;
+		position: relative;
+		@include clearfix;
+
+		.article-summary {
+			@include span-columns(2 of 7);
+			position: relative;
+		}
+		.summary-item {
+			@include span-columns(1 of 3);
+			position: relative;
+
+			span {
+				text-align: center;
+			}
+
+			span.summary-value {
+				float: left;
+				display: block;
+				width: 100%;
+			}
+			span.summary-subtext {
+				float: left;
+				display: block;
+				width: 100%;
+			}
+		}
+		.article-data {
+			@include span-columns(5 of 7);
+			@include clearfix;
+			position: relative;
+
+			.article-title {
+				display: inline-block;
+				width: 100%;
+				font-size: 1.2em;
+				font-weight: bold;
+				float: left;
+			}
+
+			.tags {
+				float: left;
+				width: 100%;
+				padding: 0.25em 0;
+			}
+			.article-meta {
+				float: left;
+				font-size: 0.8em;
+
+				span {
+					display: inline;
+					padding-left: 0.25em;
+				}
+			}
+		}
+	}
+}
+
+// - Tags - //
+
+.tag {
+	border-radius: 0.3em;
+	border: 1px solid #cecece;
+	color: #888;
+	padding: 0.25em 0.4em;
+	font-size: 0.75em;
+	text-align: center;
+	float: left;
+	margin-right: 0.25em;
+}
