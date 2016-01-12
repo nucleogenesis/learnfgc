@@ -32,6 +32,8 @@ div.character-wrapper {
 	}
 }
 
+// - Character Image Menu - //
+/* On Hover menu users can use to navigate to a specific area for a charater */
 div.character-image-menu {
 	position: absolute;
 	top: 0;
@@ -49,20 +51,29 @@ div.character-image-menu {
 		text-align: center;
 		line-height: 2.1em;
 		position: relative;
-		background: #cecece;
-		color: #444;
 		@include flex(1);
 
+		span {
+			background: #fff;
+			color: #444;
+			opacity: 0.8;
+			font-weight: 900;
+			display: block;
+			height: 32px;
+			width: 100%;
+		}
+
 		a {
+			opacity: 0.75;
 			width: 100%;
 			height: 32px;
 			display: block;
 			color: #fff;
-			@include background(radial-gradient(rgba(40,40,40,0.8),rgba(0,0,0,0.8)));
+			background: $darkblueshade;
 
 			&:hover {
-				background: black;
-				color: blue;
+				background: $darkblueshade;
+				opacity: 1;
 			}
 		}
 	}
