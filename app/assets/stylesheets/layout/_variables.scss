@@ -4,3 +4,6 @@
 // - Colors - //
 $orange: #E7BB41;
 $blue: #ADD8E3;
+
+$blueshade: shade($blue, 20);
+$orangeshade: shade($orange, 20);
