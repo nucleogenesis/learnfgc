@@ -1,0 +1,70 @@
+div.frame-data-wrapper {
+	@include span-columns(9);
+}
+div.frame-data-header {
+	@include span-columns(12);
+
+	ul {
+		@include align-items(flex-start);
+		@include display(flex);
+		@include flex-direction(row);
+		@include justify-content(space-around);
+		@include flex-wrap(no-wrap);
+	}
+	li {
+		@include flex(1);
+		margin: 0 0.5em;
+	}
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+		font-size: 1.1em;
+		line-height: 2.5em;
+		text-align: center;
+		color: #fff;
+		background: #444;
+	}
+	a:hover {
+		background: #888;
+	}
+	input {
+		margin-top: 0.2em;
+		font-size: 0.9em;
+
+		@include placeholder {
+			font-weight: 300;
+			text-decoration: italic;
+		}
+	}
+}
+div.frame-data-table-wrapper {
+	@include span-columns(12);
+}
+table.frame-data-table {
+	width: 100%;
+	cursor: pointer;
+
+	td, th {
+		text-align: center;
+	}
+
+	th {
+		background: $darkblueshade;
+		color: #fff;
+	}
+	tbody {
+		max-height: 100px;
+		overflow: hidden;
+	}
+
+	tbody tr:nth-child(4n+3) {
+		background: lighten($blue, 17);
+	}
+}
+tr.frame-data-move-dropdown {
+	display: none;
+	td {
+		text-align: left;
+	}
+}
