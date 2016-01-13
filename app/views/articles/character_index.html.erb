@@ -16,8 +16,35 @@
 	</div>
 </div>
 <div class='content-wrapper'>
-	<div class='character-sub-menu'>
-		Frame Data | Articles | Combos	
+	<div class='character-sub-header'>
+		<div class='character-sub-menu'>
+			<%= image_tag "ryu.png" %>
+			<nav>
+				<li>
+					<a href='#'>
+						Articles
+					</a>
+				</li>
+				<li>
+					<a href='#'>
+						Frame Data
+					</a>
+				</li>
+				<li>
+					<a href='#'>
+						Combos
+					</a>
+				</li>
+			</nav>
+		</div>
+		<div class='character-summary'>
+			<div class='character-stats'>
+				<b>Ryu</b>&nbsp;&nbsp;&nbsp; Age: 45 | Country: Japan | Favorite Things: Travel, Fighting | Rivals: Sagat, Bison
+			</div>
+			<div class='character-biography'>
+				Trained alongside his best friend Ken by Gouken, Ryu has led a life of fighting since his early adulthood. Gouken trained Ryu in the ways of the Shoto style. He mastered the Dragon's Fist and how to harness his chi into the powerful Hadoken fireball. Since his training he has fought in tournaments the world over making friends, rivals, admirers and enemies along the way. Ryu has battled the inner turmoil, the penultimate evil within all warriors, the Satsui No Hado. By channeling this conflict Ryu has travelled the path of light with even more power, but within him still is the power to kill any who stand in his way.
+			</div>
+		</div>
 	</div>
 	<div class='article-index-wrapper'>
 		<%= render "shared/articles/article_list" %>
