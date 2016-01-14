@@ -117,12 +117,6 @@ button.filter-button {
 				}
 			}
 
-			.tags {
-				float: left;
-				width: 100%;
-				padding: 0.25em 0;
-				margin: 0.25em 0;
-			}
 			.article-meta {
 				float: left;
 				font-size: 0.8em;
@@ -137,6 +131,13 @@ button.filter-button {
 }
 
 // - Tags - //
+
+.tags {
+	float: left;
+	width: 100%;
+	padding: 0.25em 0;
+	margin: 0.25em 0;
+}
 
 .tag {
 	font-family: $font-lato;

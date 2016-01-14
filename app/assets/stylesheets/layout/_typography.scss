@@ -9,8 +9,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+	font-size: 2.2em;
+	margin-bottom: 0.2em;
+	font-weight: 500;
+	font-family: $font-dosis;
 }
 h2 {
+	margin-top: 1.7em;
 	font-size: 1.2em;
 	font-weight: 500;
 }
@@ -21,4 +26,8 @@ a {
 	&:hover {
 		color: $blueshade;
 	}
+}
+
+p {
+	margin-bottom: 1.2em;
 }
