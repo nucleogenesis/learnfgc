@@ -11,6 +11,9 @@ class ArticlesController < ApplicationController
   def character_frame_data
   end
 
+  def character_combos
+  end
+
   def show
   end
 
