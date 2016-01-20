@@ -1,0 +1,95 @@
+div.frame-data-wrapper {
+	@include span-columns(9);
+}
+div.frame-data-header {
+	@include span-columns(12);
+
+	ul {
+		@include align-items(flex-start);
+		@include display(flex);
+		@include flex-direction(row);
+		@include justify-content(space-around);
+		@include flex-wrap(no-wrap);
+	}
+	li {
+		@include flex(1);
+		margin: 0 0.5em;
+	}
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+		font-size: 1.1em;
+		line-height: 2.5em;
+		text-align: center;
+		color: #fff;
+		background: #444;
+	}
+	a:hover {
+		background: #888;
+	}
+	input {
+		margin-top: 0.2em;
+		font-size: 0.9em;
+
+		@include placeholder {
+			font-weight: 300;
+			text-decoration: italic;
+		}
+	}
+}
+div.frame-data-table-wrapper {
+	@include span-columns(12);
+
+	/* Universal styles for header and body */
+	table {
+		font-size: 0.9em;
+
+		td, th {
+			text-align: center;
+
+			&:first-child {
+				width: 12%;
+			}
+
+		}
+
+		th {
+			background: $darkblueshade;
+			color: #fff;
+		}
+	}
+}
+
+table.frame-data-table-header {
+	position: relative;
+	z-index: 20;
+}
+
+div.frame-data-table-body {
+	width: 100%;
+	margin-top: -1.5em;
+	max-height: 600px;
+	overflow-y: scroll;
+	position: relative;
+	z-index: 10;
+
+	tr {
+		cursor: pointer;
+	}
+
+	tbody tr:nth-child(4n+3) {
+		background: lighten($blue, 17);
+	}
+
+}
+tr.frame-data-move-dropdown {
+	display: none;
+	td {
+		text-align: left;
+	}
+}
+	/* Scrollbar customization */
+	::-webkit-scrollbar {
+		display: none;
+	}

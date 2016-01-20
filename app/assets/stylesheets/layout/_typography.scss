@@ -1,0 +1,34 @@
+/* Typography */
+/* Defines SASS Variables and Settings for Fonts, Headings, Etc */
+
+$font-lato: "Lato", Helvetica, sans-serif;
+$font-dosis: "Dosis", $font-lato;
+
+$header-font: $font-lato;
+$copy-font: $font-lato;
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font;
+}
+
+h1 {
+	font-size: 2.2em;
+	margin-bottom: 0.2em;
+	font-weight: 900;
+}
+h2 {
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+a {
+	color: $link-text;
+
+	&:hover {
+		color: $link-text-hover;
+	}
+}
+
+p {
+	margin-bottom: 1.2em;
+}

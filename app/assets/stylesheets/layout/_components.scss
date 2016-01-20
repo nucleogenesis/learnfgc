@@ -1,0 +1,317 @@
+/* COMPONENTS */
+/* Styles for widely used component features of the site */
+
+.ad-filler {
+	margin-top: 0.7em;
+	width: 100%;
+	display: block;
+	float: left;
+	height: 250px;
+	text-align: center;
+	font-weight: 300;
+	font-size: 1.5em;
+	padding-top: 2em;
+	background: #cecece;
+	opacity: 0.8;
+}
+
+// - Breadcrumbs - //
+.breadcrumbs {
+	margin: 0.75em 0;
+	font-size: 1.5em;
+	font-weight: 300;
+
+	.crumb {
+		display: inline;
+		font-weight: 500;
+
+		a {
+			font-weight: 300;
+		}
+	}
+	.crumb-separator {
+		display: inline;
+		margin: 0 0.25em;
+	}
+}
+
+// - Buttons - //
+// Filter Buttons
+button.filter-button {
+	padding: 0.4em 0.2em;
+	background: #fff;
+	border: 1px solid $filter-button-border-color;
+	font-size: 0.85em;
+	font-weight: normal;
+	color: $filter-button-text;
+
+	&:hover, &.active {
+		color: $filter-button-text-alt;
+	}
+	&:hover, &.active:hover {
+		background: $filter-button-background-hover;
+	}
+	&.active {
+		background: $filter-button-background-active;
+	}
+}
+
+
+// - Article List - //
+.article-list {
+	// Sub-Header
+	.sub-header {
+		width: 100%;
+		border-bottom: 1px solid #cecece;
+		padding-bottom: 0.25em;
+		@include clearfix;
+
+		.heading {
+			float: left;
+			font-family: $copy-font;
+			font-size: 1.4em;
+			font-weight: 700;
+		}
+
+		.filter-wrapper {
+			float: right;
+			margin-top: 1.2em;
+		}
+	}
+	// Single Listed Aticle
+	.article-list-item {
+		width: 100%;
+		padding: 0.25em 0;
+		border-bottom: 1px solid #cecece;
+		position: relative;
+		@include clearfix;
+
+		.article-summary {
+			@include span-columns(2 of 7);
+			margin-top: 0.7em;
+			position: relative;
+		}
+		.summary-item {
+			@include span-columns(1 of 3);
+			position: relative;
+
+			span {
+				text-align: center;
+			}
+
+			span.summary-value {
+				font-family: $copy-font;
+				float: left;
+				display: block;
+				width: 100%;
+			}
+			span.summary-subtext {
+				font-family: $header-font;
+				font-weight: bold;
+				float: left;
+				display: block;
+				width: 100%;
+			}
+		}
+		.article-data {
+			@include span-columns(5 of 7);
+			@include clearfix;
+			position: relative;
+
+			.article-title {
+				display: inline-block;
+				width: 100%;
+				float: left;
+
+				h2 {
+					margin-bottom: 0;
+				}
+			}
+
+			.article-meta {
+				float: left;
+				font-size: 0.8em;
+
+				span {
+					display: inline;
+					padding-right: 1.5em;
+				}
+			}
+		}
+	}
+}
+
+// - Tags - //
+
+.tags {
+	float: left;
+	width: 100%;
+	padding: 0.25em 0;
+	margin: 0.25em 0;
+}
+
+.tag {
+	font-family: $copy-font;
+	font-weight: 300;
+	color: $darkgray;
+	font-size: 0.85em;
+	text-align: center;
+	float: left;
+	margin-right: 0.45em;
+
+
+	a {
+		border: 1px solid $lightgray;
+		display: block;
+		color: $tag-text;
+		white-space: nowrap;
+		padding: 0.2em 0.4em;
+		background: $tag-background;
+
+		&:hover {
+			color: $tag-text-hover;
+			border: 1px solid $tag-text-hover;
+			text-decoration: underline;
+			background: $tag-background-hover;
+		}
+	}
+}
+
+.tag-cloud {
+	width: 100%;
+	float: left;
+	margin-top: 0.75em;
+	position: relative;
+	@include align-items(stretch);
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(space-around);
+	@include flex-wrap(wrap);
+
+	.tag {
+		@include flex(1);
+		margin-bottom: 0.3em;
+		font-size: 1em;
+	}
+}
+
+// - Pagination - //
+.pagination {  
+	margin-top: 2em;
+	$base-border-color: #cecece;
+	$base-border-radius: 3px !default;
+	$base-spacing: 1.5em !default;
+	$dark-gray: #333 !default;
+	$large-screen: em(860) !default;
+	$base-font-color: $dark-gray !default;
+	$pagination-border-color: $base-border-color;
+	$pagination-border: 1px solid $pagination-border-color;
+	$pagination-background: lighten($pagination-border-color, 10);
+	$pagination-hover-background: lighten($pagination-background, 5);
+
+	text-align: center;
+
+	ul {
+		display: inline;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		li {
+			display: inline;
+			list-style: none;
+		}
+
+		ul li {
+			display: none;
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				display: inline;
+			}
+
+			@include media($large-screen) {
+				display: inline;
+			}
+		}
+
+		li a {
+			@include transition (all 0.2s ease-in-out);
+			background: $pagination-background;
+			border-radius: $base-border-radius;
+			border: $pagination-border;
+			outline: none;
+			padding: ($base-spacing / 4) ($gutter / 2);
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				background: $pagination-hover-background;
+			}
+
+			&:active {
+				background: $pagination-background;
+			}
+			&.active {
+				color: black;
+				border: none;
+			}
+		}
+	}
+}
+// - Sidebar - //
+.sidebar {
+	@include span-columns(3);
+	padding-top: 1.5em;
+}
+// - CTAs - //
+.new-article-cta {
+	width: 100%;
+	float: left;
+
+	a {
+		width: 100%;
+		display: block;
+		padding: 0.5em 0;
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.125em;
+		background: $orange;
+		color: #fff;
+
+		&:hover {
+			background: darken($orange, 20);
+		}
+	}
+}
+.beginners-guide-cta {
+	margin-top: 0.75em;
+	width: 100%;
+	float: left;
+	text-align: center;
+	padding: 0.7em 0;
+	background: $lightorange;
+	font-size: 1.2em;
+
+	h2 {
+		margin-bottom: 0.25em;
+		font-size: 1.4em;
+		font-weight: 900;
+	}
+
+	a {
+		font-weight: bold;
+		font-size: 1.2em;
+		text-decoration: underline;
+	}
+}
+.sidebar-content {
+	font-size: 0.85em;
+	text-align: center;
+	float: left;
+	width: 100%;
+	margin-top: 1.5em;
+}
+
+// -- User Image -- //

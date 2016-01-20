@@ -1,0 +1,92 @@
+div.character-wrapper {
+	width: 100%;
+	padding: 0.5em;
+	background: $lightgray;
+	margin-bottom: 1em;
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+		-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+		box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+
+	ul {
+		width: 100%;
+		@include align-items(stretch);
+		@include display(flex);
+		@include flex-direction(row);
+		@include justify-content(space-between);
+		@include flex-wrap(wrap);
+	}
+
+	li {
+		@include display(flex);
+		position: relative;
+		width: 128px;
+		height: 128px;
+		margin: 0.4em;
+	}
+
+	a {
+		@include fill-parent;
+		position: relative;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+		-moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+		box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.65);
+	}
+}
+
+// - Character Image Menu - //
+/* On Hover menu users can use to navigate to a specific area for a charater */
+div.character-image-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: $character-menu-base-background;
+
+	@include align-items(stretch);
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(flex-start);
+	@include flex-wrap(no-wrap);
+
+	div.character-index-link {
+		text-align: center;
+		line-height: 2.1em;
+		position: relative;
+		@include flex(1);
+
+		span {
+			background: $white;
+			color: $character-menu-name-text;
+			opacity: 0.8;
+			font-weight: 900;
+			display: block;
+			height: 32px;
+			width: 100%;
+		}
+
+		a {
+			opacity: 0.65;
+			width: 100%;
+			height: 32px;
+			display: block;
+			color: #fff;
+			background: $character-menu-options-background;
+
+			&:hover {
+				background: $character-menu-options-background-hover;
+				opacity: 0.75;
+			}
+		}
+	}
+}
+
+// - Article List - //
+div.article-index-wrapper {
+	@include span-columns(9);
+	margin-top: 1.7em;
+}

@@ -1,0 +1,24 @@
+<h1>Submit a New Article</h1>
+<div class='article-wrapper'>
+	<%= simple_form_for @article do |form| %>
+		<%= form.input :title %>
+		<%= form.input :tags %>
+		<%= form.ckeditor :content %>
+	<% end %>
+</div>
+<div class='sidebar'>
+	<div class='article-sidebar-item'>
+		<h3>Article FAQs</h3>
+		<ul>
+			<li>
+				Hurrrr How Do Article?
+			</li>
+			<li>
+				Hurrrr How Do Article?
+			</li>
+			<li>
+				Hurrrr How Do Article?
+			</li>
+		</ul>
+	</div>
+</div>
