@@ -17,8 +17,9 @@
 
 // - Breadcrumbs - //
 .breadcrumbs {
-	margin-bottom: 0.75em;
-	font-size: 1.2em;
+	margin: 0.75em 0;
+	font-size: 1.5em;
+	font-weight: 300;
 
 	.crumb {
 		display: inline;
@@ -58,7 +59,7 @@ button.filter-button {
 
 		.heading {
 			float: left;
-			font-family: $font-lato;
+			font-family: $copy-font;
 			font-size: 1.4em;
 			font-weight: 700;
 		}
@@ -89,13 +90,13 @@ button.filter-button {
 			}
 
 			span.summary-value {
-				font-family: $font-lato;
+				font-family: $copy-font;
 				float: left;
 				display: block;
 				width: 100%;
 			}
 			span.summary-subtext {
-				font-family: $font-dosis;
+				font-family: $header-font;
 				font-weight: bold;
 				float: left;
 				display: block;
@@ -140,7 +141,7 @@ button.filter-button {
 }
 
 .tag {
-	font-family: $font-lato;
+	font-family: $copy-font;
 	font-weight: 700;
 	border-radius: 0.5em;
 	border: 1px solid #cecece;

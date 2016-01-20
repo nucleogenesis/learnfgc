@@ -4,6 +4,9 @@
 $font-lato: "Lato", Helvetica, sans-serif;
 $font-dosis: "Dosis", $font-lato;
 
+$header-font: $font-lato;
+$copy-font: $font-lato;
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-lato;
 }
