@@ -23,6 +23,11 @@
 
 	.crumb {
 		display: inline;
+		font-weight: 500;
+
+		a {
+			font-weight: 300;
+		}
 	}
 	.crumb-separator {
 		display: inline;
@@ -35,15 +40,19 @@
 button.filter-button {
 	padding: 0.4em 0.2em;
 	background: #fff;
-	border: 1px solid #cecece;
+	border: 1px solid $filter-button-border-color;
 	font-size: 0.85em;
 	font-weight: normal;
-	color: #888;
+	color: $filter-button-text;
 
 	&:hover, &.active {
-		background: $darkblueshade;
-		color: #fff;
-		border: 1px solid $darkblueshade;
+		color: $filter-button-text-alt;
+	}
+	&:hover, &.active:hover {
+		background: $filter-button-background-hover;
+	}
+	&.active {
+		background: $filter-button-background-active;
 	}
 }
 
@@ -66,6 +75,7 @@ button.filter-button {
 
 		.filter-wrapper {
 			float: right;
+			margin-top: 1.2em;
 		}
 	}
 	// Single Listed Aticle
@@ -142,25 +152,27 @@ button.filter-button {
 
 .tag {
 	font-family: $copy-font;
-	font-weight: 700;
-	border-radius: 0.5em;
-	border: 1px solid #cecece;
-	color: #888;
-	font-size: 0.75em;
+	font-weight: 300;
+	color: $darkgray;
+	font-size: 0.85em;
 	text-align: center;
 	float: left;
 	margin-right: 0.45em;
 
 
 	a {
-		border-radius: 0.5em;
+		border: 1px solid $lightgray;
 		display: block;
-		color: $orangeshade;
+		color: $tag-text;
 		white-space: nowrap;
-		padding: 0.25em 0.5em;
+		padding: 0.2em 0.4em;
+		background: $tag-background;
 
 		&:hover {
-			color: $darkblueshade;
+			color: $tag-text-hover;
+			border: 1px solid $tag-text-hover;
+			text-decoration: underline;
+			background: $tag-background-hover;
 		}
 	}
 }

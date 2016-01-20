@@ -50,15 +50,16 @@ div.top-menu {
 			text-align: center;
 		}
 		a {
-			height: 42px;
 			display:block;
-			color: #fff;
+			height: 42px;
 			padding: 0 0.6em;
 			line-height: 2.5em;
-			background: $blueshade;
+			font-weight: 300;
+			color: $header-top-menu-text;
+			background: $header-top-menu-background;
 		}
 		a:hover {
-			background: $darkblueshade;
+			background: $header-top-menu-background-hover;
 		}
 	}
 }
@@ -67,7 +68,7 @@ div.top-search {
 	position: relative;
 	margin-right: 1em;
 	padding: 0.24em;
-	background: $blueshade;
+	background: $header-top-menu-background;
 
 	/* Overriding Bourbon Styles */
 	input {
@@ -78,7 +79,7 @@ div.top-search {
 
 		&:focus {
 			box-shadow: none;
-			border-color: $darkblueshade;
+			border-color: $blue;
 		}
 
 		@include placeholder {
@@ -94,10 +95,10 @@ div.top-search {
 		padding: 0;
 		right: 3.83335px;
 		top: 3.83335px;
-		background: $blueshade;
+		background: $header-top-menu-background;
 
 		&:hover {
-			background: $darkblueshade;
+			background: $header-top-menu-background-hover;
 		}
 	}
 
@@ -115,8 +116,9 @@ div.top-account {
 	@include span-columns(3);
 	height: 42px;
 	position: relative;
+	width: 24.6125% !important;
 	float: left;
-	background: $orange;
+	background: $header-top-menu-background;
 
 	nav {
 		width: 100%;
@@ -142,10 +144,10 @@ div.top-account {
 		display: block;
 		height: 100%;
 		width: 100%;
-		background: $orange;
+		background: $header-top-menu-background;
 
 		&:hover {
-			background: $orangeshade;
+			background: $header-top-menu-background-hover;
 		}
 	}
 
@@ -178,7 +180,8 @@ div#games-menu-wrapper {
 	float: left;
 	position: relative;
 	font-size: 1.1em;
-	font-weight: 300;
+	font-weight: 500;
+	background: $games-menu-background;
 
 	ul {
 		display: relative;
@@ -197,16 +200,16 @@ div#games-menu-wrapper {
 	}
 
 	a {
-		color: #444;
+		color: $games-menu-text;
 		display: block;
 		white-space: nowrap;
 		width: 100%;
 		height: 100%;
-		padding: 0.5em 1em;
+		padding: 0.5em 1.2em;
 	}
 
 	a:hover, a.active {
-		background: darken(gray, 20);
+		background: $games-menu-background-hover;
 		color: #fff;
 	}
 }
