@@ -2,22 +2,19 @@ class ArticlesController < ApplicationController
   def index
   end
 
-  def game_index
+  def new
+    @article = Article.new
   end
 
-  def character_index
-  end
-
-  def character_frame_data
-  end
-
-  def character_combos
+  def create
   end
 
   def show
   end
 
-  def new
-    @article = Article.new
+  def edit
+  end
+
+  def destroy
   end
 end

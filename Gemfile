@@ -25,6 +25,17 @@ gem 'paperclip', '~> 4.3'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.4.0'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
+end
+
+group :test do
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'formulaic'
+  gem 'webmock'
 end
 
 group :development do
