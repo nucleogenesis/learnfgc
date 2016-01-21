@@ -1,20 +1,9 @@
-<div class='breadcrumbs'>
-	<div class='crumb'>
-		<a href='#'>Learn</a>
-	</div>
-	<div class='crumb-separator'>
-		>
-	</div>
-	<div class='crumb'>
-		<span>Street Fighter V</span>
-	</div>
-</div>
 <div class='content-wrapper'>
 
 	<%= render "shared/articles/character_menu", characters: @characters, game: @game %> 
 
 	<div class='article-index-wrapper'>
-		<%= render "shared/articles/article_list", articles: @articles, title: "SFV FILLER TITLE" %>
+		<%= render "shared/articles/article_list", articles: @articles, title: @game.title %>
 	</div>
 
 	<div class='sidebar'>

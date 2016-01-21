@@ -10,8 +10,14 @@
   FactoryGirl.create(:article, title: "Article With A Title ##{n}")
 end
 
-Game.create(abbr: "SFV", title: "Street Fighter V")
+Game.create(abbr: "SFV", title: "Street Fighter V")     # STREET FIGHTER V - ID: 1
+Game.create(abbr: "RT", title: "Rising Thunder")        # RISING THUNDER - ID: 2
 
 ["Ryu", "Chun-Li", "Nash", "M. Bison", "Cammy", "Birdie", "Ken", "Necalli", "Vega", "R. Mika", "Rashid", "Karin", "Zangief", "Laura", "Dhalsim", "F.A.N.G."].each do |name|
   Character.create(name: name, history: Faker::Lorem.paragraph(2), game_id: 1)
 end
+
+["Edge", "Talos", "Chel", "Crow", "Vlad", "Dauntless"].each do |name|
+  Character.create(name: name, history: Faker::Lorem.paragraph(2), game_id: 2)
+end
+
