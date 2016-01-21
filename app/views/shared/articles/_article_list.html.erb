@@ -1,14 +1,70 @@
 <div class='article-list'>
 	<div class='sub-header'>
 		<div class='heading'>
-			<h1>Street Fighter V Articles</h1>
+			<h1><%= title %> Articles</h1>
 		</div>
-		<div class='filter-wrapper'>
-			<button class='filter-button active'>Newest</button>
+		<div class='filter-wrapper'> <button class='filter-button active'>Newest</button>
 			<button class='filter-button'>Most Popular</button>
 			<button class='filter-button'>Recently Updated</button>
 		</div>
 	</div>
+	<% articles.each do |article| %>
+		<div class='article-list-item'>
+			<div class='article-summary'>
+				<div class='summary-item'>
+					<span class='summary-value'>15</span>
+					<span class='summary-subtext'>Votes</span>
+				</div>
+				<div class='summary-item'>
+					<span class='summary-value'>49</span>
+					<span class='summary-subtext'>Questions</span>
+				</div>
+				<div class='summary-item'>
+					<span class='summary-value'>237</span>
+					<span class='summary-subtext'>Answers</span>
+				</div>
+			</div>
+			<div class='article-data'>
+				<div class='article-title'>
+					<h2>
+						<%= link_to article.title, article %>
+					</h2>
+				</div>
+				<div class='tags'>
+					<div class='tag'>
+						<a href='#'>
+							Matchups
+						</a>
+					</div>
+					<div class='tag'>
+						<a href='#'>
+							Strategy
+						</a>
+					</div>
+					<div class='tag'>
+						<a href='#'>
+							Footsies
+						</a>
+					</div>
+					<div class='tag'>
+						<a href='#'>
+							Training
+						</a>
+					</div>
+					<div class='tag'>
+						<a href='#'>
+							Beginners
+						</a>
+					</div>
+				</div>
+				<div class='article-meta'>
+					<span>Published 23 Feb 2016 by <a href='#'>JuiceboxFGC</a></span>
+					<span>Last Updated 4 Mar 2016 by <a href='#'>gootecks</a></span>
+				</div>
+			</div>
+		</div>
+
+	<% end %>
 	<div class='article-list-item'>
 		<div class='article-summary'>
 			<div class='summary-item'>
@@ -508,21 +564,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="pagination">
-		<ul>
-			<li class="page-prev"><a href="javascript:void(0)">Prev</a></li>
-			<li>
-				<ul>
-					<li><a href="javascript:void(0)">1</a></li>
-					<li><a href="javascript:void(0)">2</a></li>
-					<li><a href="javascript:void(0)">3</a></li>
-					<li><a href="javascript:void(0)">4</a></li>
-					<li><a href="javascript:void(0)">5</a></li>
-					<li><a href="javascript:void(0)">6</a></li>
-					<li><a href="javascript:void(0)">7</a></li>
-				</ul>
-			</li>
-			<li class="page-next"><a href="javascript:void(0)">Next</a></li>
-		</ul>
-	</div>
+	<%= paginate articles %>
 </div>

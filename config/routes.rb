@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
-  resources :game, only: [:index], controller: 'games' do
-    resources :character, only: [:index], controller: 'characters' do
+  resources :game, only: [:show], controller: 'games' do
+    resources :character, only: [:show], controller: 'characters' do
       member do
         get 'frame-data', to: 'characters#frame_data'
         get 'combos',     to: 'characters#combos'

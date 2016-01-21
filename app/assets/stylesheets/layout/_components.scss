@@ -211,52 +211,54 @@ button.filter-button {
 
 	text-align: center;
 
-	ul {
+	display: block;
+	margin: 2em auto 0;
+	padding: 0;
+	text-align: center;
+
+	.current {
+		padding: ($base-spacing / 4) ($gutter / 2);
+	}
+
+	span {
 		display: inline;
-		margin: 0;
-		padding: 0;
-		text-align: center;
+		list-style: none;
+	}
 
-		li {
+	span {
+		display: none;
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3) {
 			display: inline;
-			list-style: none;
 		}
 
-		ul li {
-			display: none;
+		@include media($large-screen) {
+			display: inline;
+		}
+	}
 
-			&:nth-child(1),
-			&:nth-child(2),
-			&:nth-child(3) {
-				display: inline;
-			}
+	span a {
+		@include transition (all 0.2s ease-in-out);
+		background: $pagination-background;
+		border-radius: $base-border-radius;
+		border: $pagination-border;
+		outline: none;
+		padding: ($base-spacing / 4) ($gutter / 2);
+		text-decoration: none;
 
-			@include media($large-screen) {
-				display: inline;
-			}
+		&:hover,
+		&:focus {
+			background: $pagination-hover-background;
 		}
 
-		li a {
-			@include transition (all 0.2s ease-in-out);
+		&:active {
 			background: $pagination-background;
-			border-radius: $base-border-radius;
-			border: $pagination-border;
-			outline: none;
-			padding: ($base-spacing / 4) ($gutter / 2);
-			text-decoration: none;
-
-			&:hover,
-			&:focus {
-				background: $pagination-hover-background;
-			}
-
-			&:active {
-				background: $pagination-background;
-			}
-			&.active {
-				color: black;
-				border: none;
-			}
+		}
+		&.active {
+			color: black;
+			border: none;
 		}
 	}
 }
