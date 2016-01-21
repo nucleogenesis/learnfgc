@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -35,7 +34,6 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'formulaic'
-  gem 'webmock'
 end
 
 group :development do

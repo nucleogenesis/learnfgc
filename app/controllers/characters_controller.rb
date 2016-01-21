@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  def index
+  def show
   end
 
   def frame_data
