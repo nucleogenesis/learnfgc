@@ -9,3 +9,9 @@
 100.times do |n|
   FactoryGirl.create(:article, title: "Article With A Title ##{n}")
 end
+
+Game.create(abbr: "SFV", title: "Street Fighter V", slug: "street-fighter-v")
+
+["Ryu", "Chun-Li", "Nash", "M. Bison", "Cammy", "Birdie", "Ken", "Necalli", "Vega", "R. Mika", "Rashid", "Karin", "Zangief", "Laura", "Dhalsim", "F.A.N.G."].each do |name|
+  Character.create(name: name, history: Faker::Lorem.paragraph(2), game_id: 1)
+end
