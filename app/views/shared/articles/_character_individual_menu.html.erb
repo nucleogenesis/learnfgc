@@ -3,19 +3,13 @@
 		<%= image_tag "ryu.png" %>
 		<nav>
 			<li>
-				<a href='#'>
-					Articles
-				</a>
+				<%= link_to "Articles", game_character_path(game_id:game.slug, id: character.slug) %>
 			</li>
 			<li>
-				<a href='#'>
-					Frame Data
-				</a>
+				<%= link_to "Frame Data", frame_data_game_character_path(game_id:game.slug, id: character.slug) %>
 			</li>
 			<li>
-				<a href='#'>
-					Combos
-				</a>
+				<%= link_to "Combos", combos_game_character_path(game_id:game.slug, id: character.slug) %>
 			</li>
 		</nav>
 	</div>

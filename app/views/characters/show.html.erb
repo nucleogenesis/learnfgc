@@ -12,13 +12,14 @@
 		>
 	</div>
 	<div class='crumb'>
-		<span>Ryu</span>
+		<span><%= @character.name %></span>
 	</div>
 </div>
 <div class='content-wrapper'>
-	<%= render 'shared/articles/character_individual_menu' %>
+	<%= render 'shared/articles/character_individual_menu', character: @character, game: @game %>
+
 	<div class='article-index-wrapper'>
-		<%= render "shared/articles/article_list" %>
+		<%= render "shared/articles/article_list", articles: @articles, title: "Ryu" %>
 	</div>
 
 	<div class='sidebar'>

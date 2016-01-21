@@ -11,7 +11,7 @@
 </div>
 <div class='content-wrapper'>
 
-	<%= render "shared/articles/character_menu" %> 
+	<%= render "shared/articles/character_menu", characters: @characters, game: @game %> 
 
 	<div class='article-index-wrapper'>
 		<%= render "shared/articles/article_list", articles: @articles, title: "SFV FILLER TITLE" %>
