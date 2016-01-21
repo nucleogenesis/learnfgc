@@ -18,6 +18,7 @@ gem 'neat'
 gem 'refills'
 
 gem 'simple_form'
+gem 'kaminari'
 gem 'ckeditor'
 gem 'paperclip', '~> 4.3'
 
