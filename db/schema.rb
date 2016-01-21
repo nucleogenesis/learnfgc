@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121174803) do
+ActiveRecord::Schema.define(version: 20160121221857) do
 
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20160121174803) do
     t.string   "title"
     t.text     "content"
     t.string   "slug"
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string   "name"
+    t.text     "history"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -36,5 +44,13 @@ ActiveRecord::Schema.define(version: 20160121174803) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+
+  create_table "games", force: :cascade do |t|
+    t.string   "abbr"
+    t.string   "title"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
