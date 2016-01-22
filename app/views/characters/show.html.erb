@@ -2,7 +2,7 @@
 	<%= render 'shared/articles/character_individual_menu', character: @character, game: @game %>
 
 	<div class='article-index-wrapper'>
-		<%= render "shared/articles/article_list", articles: @articles, title: "Ryu" %>
+		<%= render "shared/articles/article_list", articles: @articles, title: @character.name %>
 	</div>
 
 	<div class='sidebar'>
