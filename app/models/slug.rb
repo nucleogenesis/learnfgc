@@ -10,4 +10,8 @@ class Slug
   def self.slug_regex
     SLUG_REGEX
   end
+
+  def self.is_valid? slug
+    !(slug =~ SLUG_REGEX).nil?
+  end
 end

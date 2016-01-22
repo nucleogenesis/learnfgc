@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: "static_pages#home"
 
-  resources :articles
+  resources :articles do
+    resources :questions
+    resources :revisions
+  end
 
   resources :game, only: [:show], controller: 'games' do
     resources :character, only: [:show], controller: 'characters' do

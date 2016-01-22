@@ -1,14 +1,12 @@
 class Character < ActiveRecord::Base
   belongs_to :game
 
-  SLUG_REGEX = /\A[a-z0-9]+(?:(\-)+[a-z0-9]+)*\z/
-
   validates :name, presence: true
   validates :history, presence: true
   validates :game_id, presence: true
-  validate  :slug_has_been_created
-  validates :slug, presence: true, uniqueness: true, 
-    format: { with: SLUG_REGEX },
+  validate  :ensure_slug_has_been_created, on: :create
+  validates :slug, presence: true,
+    format: { with: Slug.slug_regex },
     on: :create
 
   def to_param
@@ -16,15 +14,8 @@ class Character < ActiveRecord::Base
   end
 
   private
-  def slug_has_been_created
-    return unless self.name
-    if self.slug.nil?
-      slugify
-    end
-  end
-
-  def slugify
-    self.slug = self.name.gsub(/(?:( |\W)+)+/, "-").downcase
-    self.slug = self.slug.gsub(/( |\W)\z/, "")
+  def ensure_slug_has_been_created
+    return unless self.name && self.slug.nil?
+    self.slug = Slug.slugify(self.name)
   end
 end

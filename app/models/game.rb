@@ -1,13 +1,12 @@
 class Game < ActiveRecord::Base
   has_many :characters
 
-  SLUG_REGEX = /\A[a-z0-9]+(?:(\-)+[a-z0-9]+)*\z/
+  attr_accessor :tags ##### FIX THIS #@#####
 
-  validates :abbr, presence: true
-  validates :title, presence: true
-  validate  :slug_has_been_created
+  validates :title, presence: true, length: { minimum: 5 }
+  validate  :ensure_slug_has_been_created, on: :create
   validates :slug, presence: true, uniqueness: true, 
-    format: { with: SLUG_REGEX },
+    format: { with: Slug.slug_regex },
     on: :create
 
   def to_param
@@ -15,15 +14,8 @@ class Game < ActiveRecord::Base
   end
 
   private
-  def slug_has_been_created
-    return unless self.title
-    if self.slug.nil?
-      slugify
-    end
-  end
-
-  def slugify
-    self.slug = self.title.gsub(/(?:( |\W)+)+/, "-").downcase
-    self.slug = self.slug.gsub(/( |\W)\z/, "")
+  def ensure_slug_has_been_created
+    return unless self.title && self.slug.nil?
+    self.slug = Slug.slugify(self.title)
   end
 end
