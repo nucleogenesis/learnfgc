@@ -1,9 +1,9 @@
 class Article < ActiveRecord::Base
-  attr_accessor :tags ##### FIX THIS #@#####
-
   belongs_to :user
   belongs_to :game
   belongs_to :character
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   validates :title, presence: true, length: { minimum: 5 }
   validates :content, presence: true

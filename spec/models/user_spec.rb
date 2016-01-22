@@ -11,8 +11,6 @@ RSpec.describe User, type: :model do
       it { should validate_presence_of :email }
 
       it "Should validate case-sensitive uniqueness" do
-        puts User.first.email
-        puts invalid_user_case.email
         expect{invalid_user_case.save!}.to raise_error ActiveRecord::RecordInvalid
       end
 

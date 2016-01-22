@@ -36,5 +36,7 @@ RSpec.describe Article, type: :model do
     it { should belong_to :user }
     it { should belong_to :game }
     it { should belong_to :character }
+    it { should have_many :tags }
+    it { should have_many :taggings }
   end
 end
