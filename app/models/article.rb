@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :questions
+  has_paper_trail
 
   validates :title, presence: true, length: { minimum: 5 }
   validates :content, presence: true
