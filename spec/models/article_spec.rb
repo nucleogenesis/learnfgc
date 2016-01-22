@@ -13,6 +13,10 @@ RSpec.describe Article, type: :model do
       it { should validate_presence_of :content }
     end
 
+    describe ":user_id" do
+      it { should validate_presence_of :user_id }
+    end
+
     describe ":slug" do
       it "should reject invalid slugs" do
         article.slug = "foo-bar-baz-"
@@ -26,5 +30,11 @@ RSpec.describe Article, type: :model do
         expect(article.slug).not_to be_nil
       end
     end
+  end
+
+  describe "Associations" do
+    it { should belong_to :user }
+    it { should belong_to :game }
+    it { should belong_to :character }
   end
 end
