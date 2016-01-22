@@ -40,6 +40,7 @@ GEM
     autoprefixer-rails (6.2.3)
       execjs
       json
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bitters (1.2.0)
@@ -63,6 +64,10 @@ GEM
     ckeditor (4.1.6)
       cocaine
       orm_adapter (~> 0.5.0)
+    clearance (1.12.1)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -78,6 +83,8 @@ GEM
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -228,6 +235,7 @@ DEPENDENCIES
   byebug
   capybara-webkit
   ckeditor
+  clearance
   database_cleaner
   factory_girl_rails (~> 4.0)
   faker

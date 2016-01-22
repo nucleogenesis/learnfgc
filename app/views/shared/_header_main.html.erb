@@ -42,7 +42,11 @@
 				<button><%= image_tag "search.png" %></button>
 			</div>
 			<div class='top-account'>
-				<%= render 'shared/account_no_user.html.erb' %>
+				<% if signed_in? %>
+					<%= render 'shared/account_user.html.erb' %>
+				<% else %>
+					<%= render 'shared/account_no_user.html.erb' %>
+				<% end %>
 			</div>
 		</div>
 		<div id="games-menu-wrapper">

@@ -11,6 +11,7 @@ gem 'autoprefixer-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'pg'
+gem 'clearance'
 
 gem 'bourbon'
 gem 'bitters'
