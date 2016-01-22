@@ -18,7 +18,9 @@ RSpec.describe Character, type: :model do
 
     describe ":slug" do
       it "Should have slug based on the name" do
-        expect(character.slug).to eq("fighter-guy")
+        slug = Slug.slugify(character.slug)
+
+        expect(character.slug).to eq(slug)
       end
     end
   end

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :character do
-    name "Fighter Guy"    
-    history Faker::Lorem.paragraph(2)
+    name {Faker::Name.name}
+    history {Faker::Lorem.paragraph(3)}
     game
   end
 end
