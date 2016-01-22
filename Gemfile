@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'pg'
 gem 'clearance'
+gem 'differ'
+gem 'paper_trail', '~> 4.0'
 
 gem 'bourbon'
 gem 'bitters'
