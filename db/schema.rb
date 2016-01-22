@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122202619) do
+ActiveRecord::Schema.define(version: 20160122204320) do
 
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(version: 20160122202619) do
     t.integer  "user_id"
     t.integer  "article_id"
   end
+
+  create_table "revision_comments", force: :cascade do |t|
+    t.integer  "revision_id"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "revision_comments", ["revision_id"], name: "index_revision_comments_on_revision_id"
+  add_index "revision_comments", ["user_id"], name: "index_revision_comments_on_user_id"
 
   create_table "revisions", force: :cascade do |t|
     t.integer  "article_id"
