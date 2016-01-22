@@ -1,65 +1,10 @@
 Rails.application.routes.draw do
-  get 'questions/index'
-
-  get 'questions/create'
-
-  get 'questions/new'
-
-  get 'questions/edit'
-
-  get 'questions/show'
-
-  get 'questions/update'
-
-  get 'questions/destroy'
-
-  get 'question_comments/index'
-
-  get 'question_comments/create'
-
-  get 'question_comments/new'
-
-  get 'question_comments/edit'
-
-  get 'question_comments/show'
-
-  get 'question_comments/update'
-
-  get 'question_comments/destroy'
-
-  get 'revision_comments/index'
-
-  get 'revision_comments/create'
-
-  get 'revision_comments/new'
-
-  get 'revision_comments/edit'
-
-  get 'revision_comments/show'
-
-  get 'revision_comments/update'
-
-  get 'revision_comments/destroy'
-
-  get 'revisions/index'
-
-  get 'revisions/create'
-
-  get 'revisions/new'
-
-  get 'revisions/edit'
-
-  get 'revisions/show'
-
-  get 'revisions/update'
-
-  get 'revisions/destroy'
-
   mount Ckeditor::Engine => '/ckeditor'
   root to: "static_pages#home"
 
   resources :passwords, controller: 'clearance/passwords', only: [:create, :new]
-  resources :session, controller: 'clearance/session', only: [:create]
+  resources :session, controller: 'clearance/sessions', only: [:create]
+
   resources :users,
     controller: 'clearance/users',
     only: Clearance.configuration.user_actions do
