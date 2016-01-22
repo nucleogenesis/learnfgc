@@ -4,6 +4,7 @@ class Article < ActiveRecord::Base
   belongs_to :character
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :questions
 
   validates :title, presence: true, length: { minimum: 5 }
   validates :content, presence: true

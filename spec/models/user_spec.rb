@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe "Validations" do
     describe ":username" do
-      before { build_stubbed(:user) }
+      before { create(:user) }
       let(:invalid_username_case) { build(:user, email: 'unique@emmail.com', username: 'eXamPLe') }
 
       it { should validate_presence_of :username }
@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     end
 
     describe ":email" do
-      before { build_stubbed(:user) }
+      before { create(:user) }
       let(:invalid_user_case) { build(:user, email: "EXAMPLE@EMAIL.COM", username: 'unique') }
       let(:invalid_user_format) { build(:user, email: "foo.bar.email.com", username: 'unique') }
       let(:valid_user) { build(:user, email: "foo.bar@email.com", username: 'unique') }

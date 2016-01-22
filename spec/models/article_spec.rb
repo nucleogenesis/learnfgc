@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   describe "Validations" do
+    before { create(:article) }
     let(:article) { create(:article, user: User.first) }
 
     describe ":title" do
@@ -42,6 +43,7 @@ RSpec.describe Article, type: :model do
     it { should belong_to :character }
     it { should have_many :tags }
     it { should have_many :taggings }
+    it { should have_many :questions }
   end
 
   describe "Instance Methods" do
@@ -49,7 +51,7 @@ RSpec.describe Article, type: :model do
       let(:article) { build_stubbed(:article) } # Factory creates User
       it "Should return the name of the user" do
         subject {article}
-        expect(article.author).to eq(User.first.username)
+        expect(article.author).to eq(article.user.username)
       end
     end
   end
