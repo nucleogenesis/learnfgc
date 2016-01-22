@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122160853) do
+ActiveRecord::Schema.define(version: 20160122171121) do
 
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -74,6 +74,12 @@ ActiveRecord::Schema.define(version: 20160122160853) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
+    t.string   "xbox_live_username"
+    t.string   "psn_username"
+    t.string   "steam_username"
+    t.string   "twitter"
+    t.string   "twitch"
+    t.string   "youtube"
   end
 
   add_index "users", ["email"], name: "index_users_on_email"
