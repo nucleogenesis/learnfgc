@@ -4,4 +4,6 @@ class Question < ActiveRecord::Base
   has_many :question_comments
 
   validates :content, presence: true
+  validates :user_id, presence: true
+  validates :article_id, presence: true
 end
