@@ -22,5 +22,8 @@ RSpec.describe Game, type: :model do
       end
     end
   end
-
+  describe "Associations" do
+    it { should have_many :articles }
+    it { should have_many :characters }
+  end
 end

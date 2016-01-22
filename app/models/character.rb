@@ -1,5 +1,6 @@
 class Character < ActiveRecord::Base
   belongs_to :game
+  has_many :articles
 
   validates :name, presence: true
   validates :history, presence: true
