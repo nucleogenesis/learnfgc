@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RevisionsController, type: :controller do
+RSpec.describe QuestionCommentsController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do

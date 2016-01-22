@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class RevisionCommentsController < ApplicationController
   def index
   end
 

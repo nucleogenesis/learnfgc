@@ -1,0 +1,2 @@
+module RevisionCommentsHelper
+end
