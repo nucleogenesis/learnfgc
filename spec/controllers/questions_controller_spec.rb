@@ -1,31 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
+  let(:article) { build_stubbed :article }
+  let(:question) { build_stubbed :question }
 
   describe "GET #index" do
     it "returns http success" do
-      get :index
+      get :index, article_id: article.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #new" do
     it "returns http success" do
-      get :new
+      get :new, article_id: article.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get :edit, article_id: article.id, id: question.id
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, article_id: article.id, id: question.id
       expect(response).to have_http_status(:success)
     end
   end
