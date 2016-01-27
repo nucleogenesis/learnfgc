@@ -14,6 +14,7 @@ gem 'pg'
 gem 'clearance'
 gem 'differ'
 gem 'paper_trail', '~> 4.0'
+gem 'responders'
 
 gem 'bourbon'
 gem 'bitters'

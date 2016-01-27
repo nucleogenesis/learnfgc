@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :game
   belongs_to :character
+
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :questions
