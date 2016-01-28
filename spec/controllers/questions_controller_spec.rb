@@ -81,7 +81,7 @@ RSpec.describe QuestionsController, type: :controller do
 
     describe "user is logged in" do
       before(:each) { sign_in_as(user) }
-      
+
       context "given a valid question" do
         it "creates the question, and gets successfull JSON" do
           post :create, article_id: article.slug, question: new_question
@@ -107,4 +107,60 @@ RSpec.describe QuestionsController, type: :controller do
     end
   end
 
+  describe "PATCH #update" do
+    let!(:new_question) { question.attributes }
+
+    describe "user is logged in" do
+      before(:each) { sign_in_as(user) }
+
+      context "given a valid question" do
+        it "updates the question, and gets successfull JSON" do
+          new_question[:title] = "NEW TITLE"
+          patch :update, article_id: article.slug, question: new_question, id: question.id
+
+          expect(JSON.parse(response.body)["success"]).to eq(true)
+          expect(JSON.parse(response.body)["question"]["title"]).to eq("NEW TITLE")
+        end
+      end
+
+      context "given a bad question" do
+        it "does not update the question and returns JSON error object" do
+          new_question[:title] = nil
+          patch :update, article_id: article.slug, question: new_question, id: question.id
+          expect(JSON.parse(response.body)["success"]).to eq(false)
+        end
+      end
+    end
+    describe "user IS NOT logged in" do
+      it "returns a 401 unauthorized status" do
+        sign_out
+        patch :update, format: :json, article_id: article.slug, question: new_question, id: question.id
+        expect(response).to have_http_status(401)
+      end
+    end
+
+  end
+
+  describe "DELETE #destroy" do
+    describe "user is logged in" do
+      before(:each) { sign_in_as(user) }
+
+      context "Current user owns the question" do
+        it "destroys the question and responds JSON success" do
+          id = question.id
+          delete :destroy, article_id: article.slug, id: question.id
+          expect {Question.find(id)}.to raise_error ActiveRecord::RecordNotFound
+          expect(JSON.parse(response.body)["success"]).to eq(true)
+        end
+      end
+    end
+
+    describe "user IS NOT logged in" do
+      it "returns a 401 unauthorized status" do
+        sign_out
+        delete :destroy, format: :json,  article_id: article.slug, id: question.id
+        expect(response).to have_http_status(401)
+      end
+    end
+  end
 end

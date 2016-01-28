@@ -28,9 +28,23 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    @question = Question.find(params[:id])
+
+    if @question.update_attributes(question_params)
+      return render json: { success: true, question: @question }
+    else
+      return render json: { success: false, errors: @question.errors.full_messages }
+    end
   end
 
   def destroy
+    @question = Question.find(params[:id])
+
+    if @question.destroy
+      return render json: { success: true } 
+    else
+      return render json: { success: false, errors: @question.errors.full_messages }
+    end
   end
 
   private
