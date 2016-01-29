@@ -101,8 +101,10 @@ RSpec.describe QuestionsController, type: :controller do
 
         it "does not let a question be made for a user other than the current one" do
           new_question[:user_id] = evil_user.id
-          post :create, article_id: article.slug, question: new_question
-          expect(JSON.parse(response.body)["success"]).to eq(false)
+          expect {post(:create, article_id: article.slug, question: new_question)}.to(
+            raise_error(CanCan::AccessDenied)
+          )
+          #expect(JSON.parse(response.body)["success"]).to eq(false)
         end
 
         it "notifies administration if someone tries to make a question for another user"
