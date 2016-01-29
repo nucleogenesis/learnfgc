@@ -30,8 +30,19 @@ class Article < ActiveRecord::Base
   end
 
   def has_been_revised?
-    self.versions.count > 0
+    self.versions.count > 1
   end
+
+  def published_date
+    return self.created_at.strftime("Published on %d %B %Y by ") 
+  end
+
+  def updated_date
+    return unless has_been_revised?
+    revisor = self.versions.last.whodunnit
+    return self.updated_at.strftime("Last updated on %d %B %Y by ")
+  end
+
 
   private
   def ensure_slug_is_unique
