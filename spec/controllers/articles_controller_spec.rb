@@ -34,7 +34,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     context "User Logged In" do
-      before(:each) { sign_in }
+      before(:each) { sign_in_as(user) }
 
       context "Given valid format and article" do
         it "saves the article" do
@@ -128,7 +128,7 @@ RSpec.describe ArticlesController, type: :controller do
 
         it "redirects to root path" do
           patch :update, id: article.slug, article: article_updates, format: :json 
-          expect(response).to redirect_to root_path
+          expect(response).to have_http_status(403)
         end
       end
     end
@@ -163,7 +163,7 @@ RSpec.describe ArticlesController, type: :controller do
 
         it "redirects to root path" do
           delete :destroy, id: article.slug, format: :json
-          expect(response).to redirect_to root_path
+          expect(response).to have_http_status(403)
         end
         it "does not destroy the article" do
           delete :destroy, id: article.slug, format: :json

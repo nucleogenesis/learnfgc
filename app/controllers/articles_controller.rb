@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :require_login, only: [:new, :create, :update, :destroy, :edit]
+  load_and_authorize_resource find_by: :slug
 
   def index
     @articles = Article.order('created_at DESC').page((params[:page] || 1))
@@ -25,12 +26,10 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find_by_slug(params[:id])
-    return redirect_to root_path unless @article.user_id == current_user.id
   end
 
   def update
     @article = Article.find_by_slug(params[:id])
-    return redirect_to root_path unless @article.user_id == current_user.id
 
     if @article.update_attributes(article_params)
       return render json: { success: true, article: @article }
@@ -41,7 +40,6 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find_by_slug(params[:id])
-    return redirect_to root_path unless @article.user_id == current_user.id
 
     if @article.destroy
       return render json: { success: true }
