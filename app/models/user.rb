@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   private
   def verify_role_format
+    return if self.roles.nil?
     self.roles = self.roles.gsub(/\s*,\s*/, ',')
   end
 end

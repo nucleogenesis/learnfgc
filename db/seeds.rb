@@ -9,7 +9,8 @@
 User.create(
   username: "nucleogenesis", 
   password: "password", 
-  email: "nucleogenesis@learnfgc.com"
+  email: "nucleogenesis@learnfgc.com",
+  roles: "Street Fighter V"
 )
 
 Game.create(abbr: "SFV", title: "Street Fighter V")     # STREET FIGHTER V - ID: 1

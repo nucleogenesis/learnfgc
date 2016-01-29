@@ -24,6 +24,15 @@ class Article < ActiveRecord::Base
     self.user.username
   end
 
+  def last_updated_by
+    return unless has_been_revised?
+    self.versions.last.whodunnit || author
+  end
+
+  def has_been_revised?
+    self.versions.count > 0
+  end
+
   private
   def ensure_slug_is_unique
     return if Article.find_by_slug(self.slug).nil?
