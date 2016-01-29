@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     length: { minimum: 4 }
 
   def has_role? role
+    return false if self.roles.nil?
     self.roles.split(',').include? role
   end
 

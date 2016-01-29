@@ -62,6 +62,10 @@ RSpec.describe User, type: :model do
     let(:user) { build_stubbed(:user) }
 
     describe "#has_role?" do
+      it "returns false if nil" do
+        user.roles = nil
+        expect(user.has_role?(nil)).to eq(false)
+      end
       it "checks to see if the user has a role" do
         expect(user.has_role?("Street Fighter IV")).to eq(true)
         expect(user.has_role?("Tekken 7")).to eq(true)
