@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   before_action :require_login, only: [:create, :new, :edit, :update, :destroy]
   load_and_authorize_resource
 
+  layout 'modal'
+
   def index
     @questions = Article.find_by_slug(params[:article_id]).questions
   end

@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
+
+/* Set Javascript AJAX Headers */
+$(document).ready(function() {
+	$.ajaxSetup({
+		'beforeSend': function(xhr) {
+			xhr.setRequestHeader("Accept", "text/javascript")
+		}
+	});
+});
