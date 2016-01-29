@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
 
-    if @question.save
+    if @question.save && current_user.id == @question.user_id
       return render json: { success: true, question: @question }
     else
       return render json: { success: false, errors: @question.errors.full_messages }
@@ -21,6 +21,10 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
+
+    unless @question.user_id == current_user.id
+      return redirect_to article_path(params[:article_id]) 
+    end
   end
 
   def show
@@ -29,6 +33,10 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
+
+    unless question_params[:user_id] == current_user.id
+      return redirect_to article_path(params[:article_id]) 
+    end
 
     if @question.update_attributes(question_params)
       return render json: { success: true, question: @question }
