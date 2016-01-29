@@ -37,5 +37,10 @@ class Ability
     # Question Comment
     ##
     can :manage_owned_objects, QuestionComment, user_id: user.id
+
+    ##
+    # Revisions
+    ##
+    can :manage_owned_objects, Revision, user_id: user.id
   end
 end
