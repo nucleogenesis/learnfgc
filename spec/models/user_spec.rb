@@ -34,9 +34,41 @@ RSpec.describe User, type: :model do
         expect{valid_user.save!}.not_to raise_error
       end
     end
+
+    describe ":roles, #verify_role_format" do
+      let(:user) { build(:user) }
+
+      context "when given a sentence with spaces between the commas" do
+        it "strips the whitespace and creates a valid string" do
+          user.roles = "Street Fighter V, Another Game , And One More"
+          user.save
+          expect(user.roles).to eq("Street Fighter V,Another Game,And One More")
+        end
+
+        it "doesn't get all screwy if there are no commas" do
+          user.roles = "BlazBlue: Chronophantasma EX"
+          user.save
+          expect(user.roles).to eq("BlazBlue: Chronophantasma EX")
+        end
+      end
+    end
   end
 
   describe "Associations" do
     it { should have_many :articles }
+  end
+
+  describe "Instance Methods" do
+    let(:user) { build_stubbed(:user) }
+
+    describe "#has_role?" do
+      it "checks to see if the user has a role" do
+        expect(user.has_role?("Street Fighter IV")).to eq(true)
+        expect(user.has_role?("Tekken 7")).to eq(true)
+        expect(user.has_role?("Street Fighter V")).to eq(true)
+        expect(user.has_role?("Street Fighter III")).to eq(false)
+        expect(user.has_role?("Admin")).to eq(false)
+      end
+    end
   end
 end

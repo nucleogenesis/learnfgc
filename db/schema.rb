@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122204320) do
+ActiveRecord::Schema.define(version: 20160129171942) do
 
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20160122204320) do
     t.string   "twitch"
     t.string   "youtube"
     t.string   "username"
+    t.string   "roles"
   end
 
   add_index "users", ["email"], name: "index_users_on_email"
