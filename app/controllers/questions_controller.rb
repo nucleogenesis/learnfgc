@@ -22,10 +22,6 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
-
-    unless @question.user_id == current_user.id
-      return redirect_to article_path(params[:article_id]) 
-    end
   end
 
   def show
@@ -34,10 +30,6 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-
-    unless question_params[:user_id] == current_user.id
-      return redirect_to article_path(params[:article_id]) 
-    end
 
     if @question.update_attributes(question_params)
       return render json: { success: true, question: @question }

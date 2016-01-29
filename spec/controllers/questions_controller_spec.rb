@@ -64,9 +64,9 @@ RSpec.describe QuestionsController, type: :controller do
       context "trying to edit question not owned" do
         before(:each) { sign_in_as(evil_user) }
 
-        it "redirects to article#show for the article" do
+        it "redirects to root" do
           get :edit, article_id: article.slug, id: question.id
-          expect(response).to redirect_to article_path(article.slug)
+          expect(response).to redirect_to root_path
         end
       end
     end
@@ -101,13 +101,10 @@ RSpec.describe QuestionsController, type: :controller do
 
         it "does not let a question be made for a user other than the current one" do
           new_question[:user_id] = evil_user.id
-          expect {post(:create, article_id: article.slug, question: new_question)}.to(
-            raise_error(CanCan::AccessDenied)
-          )
-          #expect(JSON.parse(response.body)["success"]).to eq(false)
+          post :create, article_id: article.slug, question: new_question
+          expect(response).to redirect_to root_path
         end
 
-        it "notifies administration if someone tries to make a question for another user"
         it "creates the question, and gets successfull JSON" do
           post :create, article_id: article.slug, question: new_question
 
@@ -139,13 +136,6 @@ RSpec.describe QuestionsController, type: :controller do
       before(:each) { sign_in_as(user) }
 
       context "given a valid question" do
-
-        it "only allows the owner to update a question" do
-          newer_question = new_question
-          newer_question[:user_id] = evil_user.id
-          patch :update, format: :json, article_id: article.slug, question: newer_question, id: question.id
-          expect(response).to redirect_to article_path(article.slug)
-        end
 
         it "updates the question, and gets successfull JSON" do
           new_question[:title] = "NEW TITLE"
@@ -179,7 +169,14 @@ RSpec.describe QuestionsController, type: :controller do
       before(:each) { sign_in_as(user) }
 
       context "Current user owns the question" do
-        it "only allows the owner to destroy the question"
+        it "only allows the owner to destroy the question" do
+          sign_out
+          sign_in_as(evil_user)
+          delete :destroy, format: :json, article_id: article.slug, id: question.id
+          expect(response).to have_http_status(403)
+        end
+
+          
         it "destroys the question and responds JSON success" do
           id = question.id
           delete :destroy, article_id: article.slug, id: question.id

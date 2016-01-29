@@ -9,7 +9,7 @@ class Ability
     ##
     
     # Can Create, Update, Destroy
-    alias_action :create, :read, :update, :destroy, to: :crud
+    alias_action :create, :edit, :update, :destroy, to: :manage_owned_objects
 
     ##
     # God User (Me... presumably)
@@ -23,14 +23,14 @@ class Ability
     ##
 
     can :read, Article
-    can :crud, Article, user_id: user.id
+    can :manage_owned_objects, Article, user_id: user.id
 
     ##
     # Question
     ##
     
     can :read, Question
-    can :crud, Question, user_id: user.id
+    can :manage_owned_objects, Question, user_id: user.id
 
     ##
     # Question Comment
