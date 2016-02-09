@@ -16,6 +16,7 @@ gem 'differ'
 gem 'paper_trail', '~> 4.0'
 gem 'responders'
 gem 'cancancan'
+gem 'gretel'
 
 gem 'bourbon'
 gem 'bitters'

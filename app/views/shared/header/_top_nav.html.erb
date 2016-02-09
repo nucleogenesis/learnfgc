@@ -1,0 +1,44 @@
+<div id="top-menu-wrapper">
+	<div class='top-menu'>
+		<nav>
+			<ul>
+				<li>
+					<a href='<%= root_path %>'>
+						Home
+					</a>
+				</li>
+				<li>
+					<a href='javascript:void(0)'>
+						Training
+					</a>
+				</li>
+				<li>
+					<a href='javascript:void(0)'>
+						Resources
+					</a>
+				</li>
+				<li>
+					<a href='javascript:void(0)'>
+						Blog
+					</a>
+				</li>
+				<li>
+					<a href='javascript:void(0)'>
+						Support
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class='top-search'>
+		<input type='text' placeholder="Search LearnFGC..." />
+		<button><%= image_tag "search.png" %></button>
+	</div>
+	<div class='top-account'>
+		<% if signed_in? %>
+			<%= render 'shared/header/account_user.html.erb' %>
+		<% else %>
+			<%= render 'shared/header/account_no_user.html.erb' %>
+		<% end %>
+	</div>
+</div>
