@@ -61,24 +61,34 @@
 				width: 100%;
 				display: block;
 				padding: 0.25em 0 0.25em 1em;
-				background: $darkblueshade;
+				background: $blue-darker;
 				color: #fff;
 
 				&:hover {
-					background: $blueshade;
+					background: $blue-dark;
 				} }
 		}
 
 	}
 }
 .article-sidebar-item-wrapper {
+	@include span-columns(1 of 1);
 	margin-top: 1.2em;
-	float: left;
 
 	h3 {
 		font-size: 1.4em;
 		font-weight: 900;
 		margin-bottom: 0.1em;
+		padding: 0.5em 0;
+		text-align: center;
+	}
+	.questions-header {
+		background: $blue-light;
+		color: $white;
+	}
+	.revisions-header {
+		background: $red-light;
+		color: $white;
 	}
 
 	.article-sidebar-item {

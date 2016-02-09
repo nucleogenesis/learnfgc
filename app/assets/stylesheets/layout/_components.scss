@@ -265,55 +265,63 @@ button.filter-button {
 // - Sidebar - //
 .sidebar {
 	@include span-columns(3);
-	padding-top: 1.5em;
 }
-// - CTAs - //
-.new-article-cta {
-	width: 100%;
-	float: left;
 
-	a {
-		width: 100%;
-		display: block;
-		padding: 0.5em 0;
-		text-align: center;
+// Article Sidebar //
+
+.sidebar-ctas {
+	@include span-columns(12);
+
+	div.article-action-button {
+		@include span-columns(1 of 2);
+		font-size: 1.25em;
 		font-weight: 700;
-		font-size: 1.125em;
-		background: $orange;
-		color: #fff;
+		text-align: center;
+		margin-right: 5%;
+		width: 47.5%;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		a {
+			display: block;
+			color: $white;
+			width: 100%;
+			padding: 0.2em 0;
+		}
+	}
+
+	.question-cta-button {
+		background: $blue-light;
 
 		&:hover {
-			background: darken($orange, 20);
+			background: $blue-lighter;
+		}
+	}
+
+	.revision-cta-button {
+		background: $red-light;
+
+		&:hover {
+			background: $red-lighter;
 		}
 	}
 }
-.beginners-guide-cta {
-	margin-top: 0.75em;
-	width: 100%;
-	float: left;
-	text-align: center;
-	padding: 0.7em 0;
-	background: $lightorange;
-	font-size: 1.2em;
 
-	h2 {
-		margin-bottom: 0.25em;
-		font-size: 1.4em;
-		font-weight: 900;
+.vote-count {
+	margin: 0 auto;
+
+	.vote-button {
+		float: left;
+		font-size: 3.5em;
+		line-height: 2em;
 	}
 
-	a {
-		font-weight: bold;
-		font-size: 1.2em;
-		text-decoration: underline;
+	.vote-count {
+		float: left;
+		font-size: 4em;
+		font-weight: 700;
 	}
 }
-.sidebar-content {
-	font-size: 0.85em;
-	text-align: center;
-	float: left;
-	width: 100%;
-	margin-top: 1.5em;
-}
 
-// -- User Image -- //
