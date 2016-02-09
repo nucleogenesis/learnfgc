@@ -1,0 +1,11 @@
+@import 'logo';
+@import 'top_nav';
+@import 'games_nav';
+
+header#header-main {
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	@include clearfix;
+	@include omega;
+}
