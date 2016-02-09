@@ -7,22 +7,27 @@ crumb :game do |game|
 end
 
 crumb :character do |character|
-  link character.name, game_character_path(id: character.slug)
+  link character.name, game_character_path(id: character.slug, game_id: character.game.slug)
   parent :game, character.game
 end
 
 crumb :frame_data do |character|
-  link "Frame Data", frame_data_game_character_path(id: character.slug)
+  link "Frame Data", frame_data_game_character_path(id: character.slug, game_id: character.game.slug)
   parent :character, character
 end
 
 crumb :combo do |character|
-  link "Combos", combos_game_character_path(id: character.slug)
+  link "Combos", combos_game_character_path(id: character.slug, game_id: character.game.slug)
   parent :character, character
 end
 
 crumb :article do |article|
   link article.title, article
+  if article.character
+    parent :character, article.character
+  elsif article.game
+    parent :game, article.game
+  end
 end
 
 # crumb :projects do
