@@ -7,8 +7,18 @@ crumb :game do |game|
 end
 
 crumb :character do |character|
-  link character.name, character
-  parent :game
+  link character.name, game_character_path(id: character.slug)
+  parent :game, character.game
+end
+
+crumb :frame_data do |character|
+  link "Frame Data", frame_data_game_character_path(id: character.slug)
+  parent :character, character
+end
+
+crumb :combo do |character|
+  link "Combos", combos_game_character_path(id: character.slug)
+  parent :character, character
 end
 
 crumb :article do |article|
