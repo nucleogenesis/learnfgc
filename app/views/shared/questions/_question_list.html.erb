@@ -1,0 +1,23 @@
+<div class='question-list'>
+	<% questions.each do |q| %>
+		<div class='listed-question'>
+			<h3>
+				<%= q.title %>
+			</h3>
+			<div class='question-meta'>
+				<div class='published'>
+					Asked by <%= q.author %> on <%= q.created_at %>
+			</div>
+		</div>
+		<div class='question-content'>
+			<p>
+				<%= q.content %>
+			</p>
+		</div>
+		<div class='question-comments-opener'>
+			<a href='#'>
+				Click To View <%= Random.rand(20) %> Answers
+			</a>
+		</div>
+	<% end %>
+</div>

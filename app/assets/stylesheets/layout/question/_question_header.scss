@@ -1,0 +1,73 @@
+// Question Index Header
+.questions-index-header {
+	@include span-columns(12);
+	margin-bottom: 1.5em;
+}
+
+.subhead-top {
+	padding: 0 0 0 0.25em;
+	@include span-columns(12);
+	@include clearfix;
+	border-bottom: 1px solid $question-base-color;
+
+	div {
+		float: left;
+	}
+
+	.subhead-title {
+		color: $question-base-color;
+		font-size: 1.5em;
+		font-weight: 900;
+	}
+
+	.goback {
+		margin-left: 5em;
+		line-height: 2em;
+
+		a {
+			color: $red-lighter;
+			text-decoration: underline;
+			font-style: italic;
+		}
+	}
+
+	.ask-question {
+		text-align: center;
+		float: right;
+
+		a {
+			display: block;
+			color: #fff;
+			padding: 0.5em;
+			background: $question-base-color;
+
+			&:hover {
+				background: $question-base-hover;
+			}
+		}
+	}
+}
+.subhead-bottom {
+	@include span-columns(12);
+	border-bottom: 1px solid $question-base-color;
+	padding: 0.25em;
+
+	.question-filters {
+		float: left;
+
+		div {
+			margin-right: 0.9em;
+			float: left;
+		}
+	}
+	.order-filters {
+		float: right;
+		
+		a {
+			font-size: 0.875em;
+			font-weight: 300;
+			margin: 0 0.2em;
+			text-decoration: underline;
+		}
+	}
+}

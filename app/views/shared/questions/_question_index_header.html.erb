@@ -1,0 +1,41 @@
+<header class='article-subhead questions-index-header'>
+	<div class='subhead-top'>
+		<div class='subhead-title'>
+			Questions
+		</div>
+		<div class='goback'>
+			<%= link_to "Go Back To Article...",  article_path(article.slug) %>
+		</div>
+		<div class='ask-question'>
+			<a href='#'>
+				Ask A Question
+			</a>
+		</div>
+	</div>
+	<div class='subhead-bottom'>
+		<div class='question-filters'>
+			<div>
+				Show:
+			</div>
+			<div class='radio-filter'>
+				<input type='radio' /> 
+				Answered
+			</div>
+			<div class='radio-filter'>
+				<input type='radio' /> 
+				Unanswered
+			</div>
+			<div class='radio-filter'>
+				<input type='radio' /> 
+				All
+			</div>
+		</div>
+		<div class='order-filters'>
+			Order By:
+			<a href='#'>Newest</a>
+			<a href='#'>Oldest</a>
+			<a href='#'>Most Answers</a>
+			<a href='#'>Fewest Answers</a>
+		</div>
+	</div>
+</header>
