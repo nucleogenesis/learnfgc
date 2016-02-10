@@ -3,8 +3,7 @@ $orange: 		#FF9C17;
 $green:			#12c477;
 $blue:			#1C75BC;
 $red:			#D51400;
-$darkgray:		#444;
-$lightgray:		#CECECE;
+$darkgray:		#444; $lightgray:		#CECECE;
 $white:			#FFF;
 
 $orange-dark: 		shade($orange, 20);
@@ -59,3 +58,9 @@ $filter-button-text-alt:						$white;
 $filter-button-background-active: 				$blue-light;
 $filter-button-background-hover:				$blue-dark;
 $filter-button-border-color:					$lightgray;
+
+// Revision Base Color
+$revision-base-color:							$green-light;
+
+// Question Base Color
+$question-base-color:							$blue-light;

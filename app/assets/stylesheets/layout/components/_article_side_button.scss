@@ -20,7 +20,7 @@
 
 .question-link-button {
 	a:hover {
-		background: $blue-light;
+		background: $question-base-color;
 		color: #fff;
 	}
 }
@@ -29,7 +29,7 @@
 	margin-bottom: 0;
 
 	a:hover {
-		background: $green-light;
+		background: $revision-base-color;
 		color: #fff;
 	}
 }
