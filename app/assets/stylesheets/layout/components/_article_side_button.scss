@@ -3,7 +3,7 @@
 .article-side-button {
 	width: 100%;
 	float: left;
-	margin: 0.5em 0;
+	margin: 0.35em 0;
 	text-align: center;
 	font-size: 1.3em;
 	font-weight: 300;
@@ -26,6 +26,8 @@
 }
 
 .revision-link-button {
+	margin-bottom: 0;
+
 	a:hover {
 		background: $green-light;
 		color: #fff;

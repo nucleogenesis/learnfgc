@@ -13,13 +13,9 @@
 	</div>
 
 	<div class='article-side-button question-link-button'>
-		<a href='#'>
-			9 Questions & 25 Answers
-		</a>
+		<%= link_to "9 Questions & 25 Answers", article_questions_path(article.slug) %>
 	</div>
 	<div class='article-side-button revision-link-button'>
-		<a href='#'>
-			4 Pending Suggestions
-		</a>
+		<%= link_to "3 Pending Suggestions", article_revisions_path(article.slug) %>
 	</div>
 </div>
