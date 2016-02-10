@@ -1,0 +1,59 @@
+// Vote Widget for Articles
+.article-votes {
+	width: 100%;
+	text-align: center;
+	@include align-items(stretch);
+	@include display(flex);
+	@include flex-direction(row);
+	@include justify-content(space-around);
+	@include flex-wrap(wrap);
+
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+		line-height: 2em;
+		font-size: 2em;
+		color: $white;
+	}
+
+	.vote-button {
+		@include flex(1);
+		margin: 0 0.5em;
+	}
+	.vote-minus {
+		background: $red-light;
+
+		&:hover {
+			background: $red-lighter;
+		}
+	}
+	.vote-plus {
+		background: $blue-light;
+
+		&:hover {
+			background: $blue-lighter;
+		}
+	}
+
+
+	.vote-count {
+		@include flex(2);
+
+		div {
+			width: 100%;
+			font-size: 1em;
+			float: left;
+		}
+
+		.subtext {
+			margin-top: 0.525em;
+		}
+
+		.count {
+			font-size: 2.25em;
+			line-height: 0.8em;
+			font-weight: bold;
+		}
+	}
+}
