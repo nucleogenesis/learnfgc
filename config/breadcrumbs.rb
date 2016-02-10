@@ -22,12 +22,17 @@ crumb :combo do |character|
 end
 
 crumb :article do |article|
-  link article.title, article
+  link article.title, article_path(article.slug)
   if article.character
     parent :character, article.character
   elsif article.game
     parent :game, article.game
   end
+end
+
+crumb :questions do |article|
+  link "Questions", article
+  parent :article, article
 end
 
 # crumb :projects do

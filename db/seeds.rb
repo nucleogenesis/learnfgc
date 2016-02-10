@@ -25,10 +25,23 @@ end
 end
 
 100.times do
-  FactoryGirl.create(
+  game_id =  Proc.new { |n| (n > 0) ? n : nil }.call(Random.rand(0..2))
+  if game_id
+    character_id = Proc.new { |n| (n > 0) ? (Random.rand(Game.find(game_id).characters.length) + 1) : nil }.call(Random.rand(-5..6))
+  end
+
+  article = FactoryGirl.create(
     :random_article,
-    game_id: Proc.new { |n| (n > 0) ? n : nil }.call(Random.rand(0..2)),
-    character_id: Proc.new { |n| (n > 0) ? n : nil }.call(Random.rand(-5..6)),
+    game_id: game_id,
+    character_id: character_id,
     user_id: 1
   )
+
+  (Random.rand(20)).times do
+    question = FactoryGirl.create(:question, user_id: 1, article_id: article.id)
+
+    (Random.rand(10)).times do
+      FactoryGirl.create(:question_comment, question_id: question.id, user_id: 1)
+    end
+  end
 end

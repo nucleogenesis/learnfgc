@@ -1,52 +1,7 @@
 <% breadcrumb :article, @article %>
 <div class='content-wrapper'>
 	<article class='article-wrapper'>
-		<header class='article-header'>
-			<h1>
-				<%= @article.title %>
-			</h1>
-			<div class='article-meta'>
-				<span>
-					<%= @article.published_date %>
-					<%= link_to @article.author, root_path %>
-				</span>
-				<% if @article.has_been_revised? %>
-					<span>Last Updated <%= @article.updated_at %> by <a href="#">XxN0SCOPExX</a></span>
-				<% end %>
-			</div>
-			<div class='tags'>
-				<div class='tag'>
-					<a href='#'>
-						Training
-					</a>
-				</div>
-				<div class='tag'>
-					<a href='#'>
-						vs Birdie
-					</a>
-				</div>
-				<div class='tag'>
-					<a href='#'>
-						Matchup Strategy
-					</a>
-				</div>
-				<div class='tag'>
-					<a href='#'>
-						vs Alex
-					</a>
-				</div>
-				<div class='tag'>
-					<a href='#'>
-						Zoning
-					</a>
-				</div>
-				<div class='tag'>
-					<a href='#'>
-						vs Zangief
-					</a>
-				</div>
-			</div>
-		</header>
+		<%= render 'shared/articles/article_header', article: @article %>
 		<div class='article-body'>
 			<%= @article.content %>
 		</div>

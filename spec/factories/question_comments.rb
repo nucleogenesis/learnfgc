@@ -1,8 +1,5 @@
 FactoryGirl.define do
   factory :question_comment do
-    question nil
-content "MyText"
-user nil
+    content { Faker::Lorem.paragraph(2) }
   end
-
 end
