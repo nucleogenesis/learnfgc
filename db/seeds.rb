@@ -45,3 +45,11 @@ end
     end
   end
 end
+
+Question.all.each do |q|
+  return if Random.rand(10) > 7 || q.question_comments.length < 1
+    
+  c = q.question_comments.first
+  c.accepted = true
+  c.save
+end

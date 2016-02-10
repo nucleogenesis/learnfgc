@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129171942) do
+ActiveRecord::Schema.define(version: 20160210175819) do
 
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(version: 20160129171942) do
     t.integer  "question_id"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "accepted",    default: false
   end
 
   add_index "question_comments", ["question_id"], name: "index_question_comments_on_question_id"
